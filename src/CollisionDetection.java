@@ -70,7 +70,7 @@ public class CollisionDetection {
 		if(xOverlap <= yOverlap){
 			return "SideCollision";
 		}else{  // reigistering green TopCollision red 
-			if(a2.getBounds().getMinY()<=a1.getBounds().getMaxY()){
+			if(a1.getYPos() <= a2.getYPos()){
 				a1.setInAir(false);
 				return "BottomCollision";
 			}else{
