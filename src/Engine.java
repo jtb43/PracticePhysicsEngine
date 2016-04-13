@@ -85,14 +85,8 @@ public class Engine {
 		
 		nextYPos     = changePos(yPos, nextVertVelo);                       //Update y position with y velocity
 		nextVertVelo = maxLimit(nextVertVelo, maxVertVelocity);
-			
-//		if(nextYPos > floorHeight){                   						 //Collision detection for the actor and the ground
-//			nextYPos = floorHeight;											//TODO: delete this if statement after the floor is implemented as an actor
-//			nextVertVelo = 0;
-//			a.setInAir(false);
-//		}
 		
-		nextHorzVelo = applyForce(xVelo, forceX); 							// Apply  y force from movement action to y velocity
+		nextHorzVelo = applyForce(xVelo, forceX); // Apply  y force from movement action to y velocity
 		nextHorzVelo = applyForce(nextHorzVelo, (friction*(nextHorzVelo))); //Apply frictional force
 		nextXPos  = changePos(xPos,nextHorzVelo);
 		nextHorzVelo = maxLimit(nextHorzVelo, maxHorizVelocity);

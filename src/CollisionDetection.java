@@ -28,7 +28,7 @@ public class CollisionDetection {
 		for (Actor a1 : actors){
 			a1.setInAir(true);
 			for(Actor a2 : actors){
-				if((a1 != a2) && (a1.getName()!="floor")){  //Checks that each actor in the pair is unique
+				if((a1 != a2) ){  //Checks that each actor in the pair is unique
 					if(isCollision(a1,a2))
 						resolveCollision(a1,a2);
 				}
@@ -69,7 +69,7 @@ public class CollisionDetection {
 		
 		if(xOverlap <= yOverlap){
 			return "SideCollision";
-		}else{  // reigistering green TopCollision red 
+		}else{  
 			if(a1.getYPos() <= a2.getYPos()){
 				a1.setInAir(false);
 				return "BottomCollision";
